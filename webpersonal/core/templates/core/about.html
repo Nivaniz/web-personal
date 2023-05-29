@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Acerca de mi{% endblock %}
+
+{% block background %}{% load static %} {% static 'core/img/home-bg.jpg' %}{% endblock %}
+
+
+{% block headers %}
+<h1>¿Quién soy?</h1>
+<span class="subheading">Acerca de mi</span>
+{% endblock %}
+
+{% block content %} <!-- Para agregar contenido abajo de la pantalla es aquí -->
+
+<div class="row justify-content-center">
+    <div class="col-lg-6 text-center">
+        <img class="img-fluid avatar" src="{% static 'core/img/yo.jpg' %}" alt="" style="width: 300px; height: 300px; object-fit: cover;">
+    </div>
+</div>
+<div class=>
+          <h2 class="section-heading">Un gusto en conocerte!</h2>
+    Mi nombre es <b>Nirvana Belen</b>. Desde temprana edad, me ha fascinado el diseño y el manejo de computadoras,
+    y a lo largo del tiempo he ido desarrollando mi pasión por estas áreas. Actualmente, soy estudiante en la
+    <b>Universidad Autónoma de Querétaro (UAQ)</b>, donde estoy ampliando mis conocimientos en el campo del diseño
+    de interfaces y la experiencia de usuario (<i>UI/UX</i>).
+    <br>
+    <br>
+    He adquirido experiencia práctica en el diseño de interfaces atractivas y funcionales, así como en la investigación
+    y pruebas de experiencia de usuario. Utilizo herramientas como <b>Figma</b> y <b>Miro</b> para crear diseños impactantes,
+    y me siento cómoda trabajando en la fase de prototipado y <i>wireframing</i> para garantizar la mejor experiencia posible para
+    los usuarios.
+    <br><br>
+    Además, cuento con conocimientos en <b>Desarrollo web</b>, utilizando lenguajes como <b>JavaScript</b>, <b>HTML</b> y <b>CSS</b>.
+    Mi enfoque principal en programación se centra en el lenguaje <b>Python</b>, y he trabajado con frameworks como <i>Django</i> y <i>QT/PySide</i>
+    para el desarrollo backend de aplicaciones.
+    <br><br>
+    Colaboré para el grupo <b>ESTIC</b> (Educación Social de las Tecnologías de la Información y la Comunicación) donde impartí
+    varias conferencias a diferentes niveles educativos desarrollando así habilidades en la enseñanza y el manejo de las tecnologías
+    de la información y comunicación (<b>TIC</b>), lo cual me ha permitido compartir mis conocimientos con otros y fomentar el aprendizaje
+    en este ámbito.
+    <br><br>
+    Mi pasión por los idiomas también destaca en mi perfil, ya que tengo fluidez en Español, Inglés y Portugués. Disfruto explorar diferentes lenguajes y culturas, lo que me
+    brinda una perspectiva más amplia a la hora de abordar proyectos. Estoy emocionada por seguir creciendo profesionalmente
+    y contribuir al mundo digital con mi creatividad, dedicación y habilidades técnicas.
+</div>
+{% endblock %}
+
+<!--<div>
+          <img class="img-fluid avatar" src="{% static 'core/img/yo.jpg' %}" alt="" style="width: 300px; height: 200px; object-fit: cover;" >
+</div>-->
