@@ -13,6 +13,3 @@ def about(request):
 def contact(request):
     return render(request, "core/contact.html")
 
-
-def home_en(request):
-    return render(request, "core/main.html")

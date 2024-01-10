@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+{% block title %}Portafolio{% endblock %}
+
+{% block background %}{% load static %} {% static 'core/img/portafo.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1>Portafolio</h1>
+<span class="subheading">My projects</span>
+{% endblock %}
+
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <!-- Columna principal de proyectos -->
+      <div class="col-md-8">
+        {% for project in projects %}
+          <div id="{{ project.title|slugify }}" class="card mb-4">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="{{ project.image.url }}" class="card-img" alt="{{ project.title }}">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h2 class="card-title h5">{{ project.title }}</h2>
+                  <p class="card-text small text-sm">{{ project.description }}</p>
+                  {% if project.link %}
+                    <a href="{{ project.link }}" class="btn btn-primary">More Information</a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Lista de nombres de proyectos en la columna lateral derecha -->
+      <div class="col-md-4">
+        <ul class="list-group">
+          {% for project in projects %}
+            <li class="list-group-item">
+              <a href="#{{ project.title|slugify }}">{{ project.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}

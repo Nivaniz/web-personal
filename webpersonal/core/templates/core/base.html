@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,8 +9,13 @@
 
     <title>{% block title %}{% endblock %} | Nirvana as in Nirvana</title>
 
+    <!-- Favicon -->
+  <!-- Favicon -->
+<link rel="icon" href="{% static 'core/img/logo.ico' %}" type="image/x-icon">
+<link rel="shortcut icon" href="{% static 'core/img/logo.ico' %}" type="image/x-icon">
+
+
     <!-- Estilos y fuentes del templarte  -->
-    {% load static %}
     <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -30,21 +36,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            {% if request.path == "/main/" %}
+            {% if request.path == "/english/main/" or request.path == "/english/aboutme/" or request.path == "/english/portfoliome/" or request.path == "/english/contactme/" %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}">Main</a>
+              <a class="nav-link" href="{% url 'main' %}">Main</a>
+            </li>
+            <li class="nav-item px-lg-4 {% if request.path == '/aboutme/' %}active{% endif %}">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'aboutme' %}">About-me</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">About-me</a>
+              <a class="nav-link" href="{% url 'portfoliome' %}">Portfolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>
+              <a class="nav-link" href="{% url 'contactme' %}">Contact Me</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact' %}">Contact Me</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}">ES</a> <!-- Botón "ES" -->
+              <a class="nav-link" href="{% url 'home' %}">Change to Spanish</a> <!-- Botón "ES" -->
             </li>
             {% else %}
             <li class="nav-item">
@@ -56,15 +62,16 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'portfolio' %}">Portafolio</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact' %}">Contáctame</a>
+            <li class="nav-item px-lg-4 {% if request.path == '/contact/' %}active{% endif %}">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'contact' %}">Contáctame</a>
             </li>
-            {% endif %}
-            {% if request.path == "/" %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'main' %}">EN</a> <!-- Botón "EN" -->
+              <a class="nav-link" href="{% url 'main' %}">Change to English</a> <!-- Botón "EN" -->
             </li>
+            
             {% endif %}
+            
+            
           </ul>
         </div>
       </div>
@@ -124,7 +131,7 @@
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; 2023 · Nirvana González (Ingeniera de Software) </p>
+            <p class="copyright text-muted">Copyright &copy; 2024 · Nirvana González (Ingeniera de Software) </p>
           </div>
         </div>
       </div>

@@ -1,0 +1,59 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/notas.jpg' %} {% endblock %}
+
+{% block headers %}
+<h1>Contact me</h1>
+<span class="subheading">Do you have an idea in mind?</span>
+{% endblock %}
+
+{% block content %}
+<section class="page-section about-heading">
+    <div class="container">
+        <div class="row">
+            <!-- Text to the left -->
+            <div class="col-lg-6">
+                <h2 class="section-heading mb-4">Need help or have an idea in mind? I'm here to assist you!</h2>
+                <p class="section-heading-upper">If you have any questions about my work or would like to collaborate, feel free to contact me:</p>
+                <p class="section-heading-lower" style="color: green;">I'll get back to you promptly</p>
+                {% if 'ok' in request.GET %}
+                    <p>Your message has been sent successfully. We'll get in touch with you shortly!</p>
+                {% endif %}
+
+                <!-- Additional information -->
+                <p>You can also visit my social media profiles below, such as my GitHub profile where you can find all my works or my LinkedIn profile.</p>
+                <p >I appreciate your support!</p>
+            </div>
+
+            <!-- Form to the right -->
+            <div class="col-lg-6">
+                <div class="bg-faded rounded p-5">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label>Name *</label>
+                            {{ form.name }}
+                            {{ form.name.errors }}
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            {{ form.email }}
+                            {{ form.email.errors }}
+                        </div>
+                        <div class="form-group">
+                            <label>Message *</label>
+                            {{ form.content }}
+                            {{ form.content.errors }}
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-primary btn-block py-2" value="Send">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

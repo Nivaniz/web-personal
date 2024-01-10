@@ -1,0 +1,55 @@
+{% extends 'core/base.html' %}
+
+{% block title %}About me{% endblock %}
+
+{% block background %}{% load static %} {% static 'core/img/bout.jpg' %}{% endblock %}
+
+
+{% block headers %}
+<h1>Who am I?</h1>
+<span class="subheading">About me</span>
+{% endblock %}
+
+{% block content %} <!-- Para agregar contenido abajo de la pantalla es aquí -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h2 class="section-heading">Nice to meet you!</h2>
+            <br>
+            <p>My name is <b>Nirvana González</b> (Yes!... Like the rock band 🤘). From an early age, I've been fascinated by design and computer handling, and over time, I've developed my passion for these areas. Currently, I'm a student at the <b>Autonomous University of Querétaro (UAQ)</b>, where I'm expanding my knowledge in the field of interface design and backend management.</p>
+            <!-- First text block -->
+        </div>
+        <div class="col-lg-6 text-center">
+            <img class="img-fluid avatar" src="{% static 'core/img/me.png' %}" alt="" style="width: 500px; height: 300px; object-fit: cover;">
+        </div>
+        <div class="col-lg-6">
+            <p>I have gained practical experience in designing attractive and functional interfaces, as well as in user experience research and testing. I use tools like <b>Figma</b> and <b>Miro</b> to create impactful designs, and I am comfortable working in the prototyping and wireframing phase to ensure the best possible user experience.</p>
+            <!-- Second text block -->
+        </div>
+        <div class="col-lg-6">
+            <p>Furthermore, I have knowledge in <b>Web Development</b>, using languages like <b>JavaScript</b>, <b>HTML</b>, and <b>CSS</b>. My main programming focus is on the <b>Python</b> language, and I have worked with frameworks like <i>Django</i> and <i>QT/PySide</i> for backend application development.</p>
+            <!-- Third text block -->
+        </div>
+        <div class="col-lg-6">
+            <p>I collaborated with the <b>ESTIC</b> group (Social Education of Information and Communication Technologies) where I gave several lectures at different educational levels, developing skills in teaching and managing information and communication technologies (<b>ICT</b>), allowing me to share my knowledge with others and promote learning in this field.</p>
+            <!-- Fourth text block -->
+        </div>
+        <div class="col-lg-6">
+            <p>My passion for languages also stands out in my profile, as I am fluent in <b>Spanish, English, and Portuguese.</b> I enjoy exploring different languages and cultures, providing me with a broader perspective when approaching projects. I am excited to continue growing professionally and contributing to the digital world with my creativity, dedication, and technical skills.</p>
+            <!-- Fifth text block -->
+        </div>
+        
+    </div>
+
+    <div class="col-lg-12 text-center">
+        <p>                         "Code is like humor. When you have to explain it, it's not that good."
+            <br>– Cory House</p>
+        <!-- Sixth text block -->
+    </div>
+</div>
+{% endblock %}
+
+<!--<div>
+          <img class="img-fluid avatar" src="{% static 'core/img/yo.jpg' %}" alt="" style="width: 300px; height: 200px; object-fit: cover;" >
+</div>-->
